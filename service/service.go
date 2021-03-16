@@ -164,6 +164,10 @@ func (s *HttpService) getTxTime(txid string) (error, uint32) {
 	return nil, header.GetTimeStamp()
 }
 
+func (s *HttpService) GetFailedDepositTransactions(param http.Params) (interface{}, error) {
+	return []string{"6ca5d426c57f41637c7ecdb2a18ff34af9edabd31acfe95b79e8ebebdf39b98c","baea07cdd8cfdcaf1ff2b5465cd554956e39b1cc343baebc392f7453c3abb55f"}, nil
+}
+
 func (s *HttpService) ResolveDID(param http.Params) (interface{}, error) {
 	var didDocState DidDocState
 	didDocState = NonExist

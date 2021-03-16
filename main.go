@@ -270,6 +270,8 @@ func newRPCServer(port uint16, service *sv.HttpService) *jsonrpc.Server {
 	s.RegisterAction("getillegalevidencebyheight", service.GetIllegalEvidenceByHeight, "height")
 	s.RegisterAction("checkillegalevidence", service.CheckIllegalEvidence, "evidence")
 	s.RegisterAction("resolvedid", service.ResolveDID, "id", "all")
+	//Test only
+	s.RegisterAction("getfaileddeposittransactions", service.GetFailedDepositTransactions)
 
 	return s
 }
